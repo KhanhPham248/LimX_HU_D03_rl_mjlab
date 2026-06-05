@@ -55,36 +55,6 @@ Học tái hiện tệp chuyển động mục tiêu (cần tệp `hu_d03_motion
 python scripts/train.py Mjlab-Mimic-Flat-HuD03
 ```
 
-*(Mẹo: Bạn có thể thêm tham số `--env.scene.num-envs 16` để kiểm tra chạy thử nhanh cấu hình với số môi trường nhỏ trước khi train thật).*
-
----
-
-## 📊 Hệ Thống Log & Quản Lý Dữ Liệu
-
-### Lưu trữ cục bộ (Local Logs)
-Log huấn luyện được ghi tự động vào các thư mục riêng biệt tại:
-* Locomotion phẳng: `logs/rsl_rl/hu_d03_03_flat/`
-* Locomotion gồ ghề: `logs/rsl_rl/hu_d03_03_rough/`
-* Bắt chước Mimic: `logs/rsl_rl/hu_d03_03_mimic/`
-
-### Trực quan hóa (Weights & Biases)
-Toàn bộ biểu đồ Reward, Loss, Entropy của cả 3 tác vụ được tự động đồng bộ thời gian thực lên WandB Project:
-* **WandB Project Name:** `hu_d03_03`
-
----
-
-## 🔄 Công Cụ Chuyển Đổi Dữ Liệu CSV sang NPZ cho Mimic
-
-Để nạp tệp chuyển động CSV thô từ bên ngoài vào hệ thống huấn luyện Mimic, bạn cần chạy script chuyển đổi động học ngược để tính toán tọa độ thế giới của từng khớp xương:
-
-```bash
-python scripts/csv_to_npz.py --input-file <ĐƯỜNG_DẪN_TỚI_FILE_CSV> --output-name hu_d03_motion.npz
-```
-
-*Ví dụ:*
-```bash
-python scripts/csv_to_npz.py --input-file ../unitree_rl_mjlab-main/src/assets/motions/g1/dance1_subject2.csv --output-name hu_d03_motion.npz
-```
 
 
 
